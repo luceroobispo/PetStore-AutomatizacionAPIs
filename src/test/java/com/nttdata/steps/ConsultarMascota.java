@@ -4,9 +4,6 @@ import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Step;
 import org.junit.Assert;
 
-import static io.restassured.RestAssured.given;
-import static net.serenitybdd.rest.SerenityRest.restAssuredThat;
-
 public class ConsultarMascota {
 
     private static final String BASE_URL = "https://petstore.swagger.io/v2";
