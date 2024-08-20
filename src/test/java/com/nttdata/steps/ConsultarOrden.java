@@ -4,6 +4,7 @@ import io.restassured.response.Response;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Step;
 
+import static net.serenitybdd.rest.SerenityRest.restAssuredThat;
 public class ConsultarOrden {
 
     private static String URL = null;
@@ -28,5 +29,9 @@ public class ConsultarOrden {
     @Step("Imprimir orden de compra")
     public void imprimirOrden() {
         System.out.println("Orden de compra: " + response.asString());
+    }
+
+    public void validarCodigoRespuesta(int statusCode) {
+        restAssuredThat(response -> response.statusCode(statusCode));
     }
 }

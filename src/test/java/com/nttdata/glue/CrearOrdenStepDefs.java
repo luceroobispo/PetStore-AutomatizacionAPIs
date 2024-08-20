@@ -2,6 +2,7 @@ package com.nttdata.glue;
 
 import com.nttdata.steps.CrearOrden;
 import com.nttdata.steps.ConsultarMascota;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -29,5 +30,10 @@ public class CrearOrdenStepDefs {
     @Then("el código de respuesta es {int}")
     public void elCódigoDeRespuestaEs(int statusCode) {
         crearOrden.validarCodigoRespuesta(statusCode);
+    }
+
+    @And("el body de la response coincide con el body de la orden de compra creada")
+    public void validoQueElBodyDeLaRespuestaSeaIgualA(String body) {
+        crearOrden.validarBodyRespuesta(body);
     }
 }

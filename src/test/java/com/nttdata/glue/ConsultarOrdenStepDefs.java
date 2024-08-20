@@ -25,4 +25,9 @@ public class ConsultarOrdenStepDefs {
     public void imprimirOrden() {
         consultarOrden.imprimirOrden();
     }
+
+    @Then("el código de respuesta es statusCode {int}")
+    public void elCódigoDeRespuestaEsStatusCode(int statusCode) {
+        consultarOrden.validarCodigoRespuesta(statusCode);
+    }
 }
