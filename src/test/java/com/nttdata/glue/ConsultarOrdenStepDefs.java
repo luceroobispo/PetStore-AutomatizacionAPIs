@@ -1,6 +1,7 @@
 package com.nttdata.glue;
 
 import com.nttdata.steps.ConsultarOrden;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -21,13 +22,13 @@ public class ConsultarOrdenStepDefs {
         consultarOrden.consultarOrden(orderId);
     }
 
-    @Then("imprimo el orden de compra")
-    public void imprimirOrden() {
-        consultarOrden.imprimirOrden();
-    }
-
     @Then("el código de respuesta es statusCode {int}")
     public void elCódigoDeRespuestaEsStatusCode(int statusCode) {
         consultarOrden.validarCodigoRespuesta(statusCode);
+    }
+
+    @And("imprimo el orden de compra")
+    public void imprimirOrden() {
+        consultarOrden.imprimirOrden();
     }
 }

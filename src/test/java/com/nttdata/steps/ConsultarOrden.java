@@ -31,6 +31,7 @@ public class ConsultarOrden {
         System.out.println("Orden de compra: " + response.asString());
     }
 
+    @Step("Validar código de respuesta")
     public void validarCodigoRespuesta(int statusCode) {
         restAssuredThat(response -> response.statusCode(statusCode));
     }

@@ -32,7 +32,7 @@ public class CrearOrdenStepDefs {
         crearOrden.validarCodigoRespuesta(statusCode);
     }
 
-    @And("el body de la response coincide con el body de la orden de compra creada")
+    @And("el response body coincide con el body de la orden de compra creada")
     public void validoQueElBodyDeLaRespuestaSeaIgualA(String body) {
         crearOrden.validarBodyRespuesta(body);
     }

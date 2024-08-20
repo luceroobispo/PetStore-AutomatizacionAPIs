@@ -5,7 +5,7 @@ Feature: Crear y consultar orden de compra para una mascota en PetStore
     Given consulto si la mascota con id <petId> existe y no está con estado sold
     When creo la orden de compra con id <id>, petId <petId>, quantity <quantity>, shipDate "<shipDate>", status "<status>" y complete "<complete>"
     Then el código de respuesta es <statusCode>
-    And el body de la response coincide con el body de la orden de compra creada
+    And el response body coincide con el body de la orden de compra creada
       """
       {
         "id": <id>,
